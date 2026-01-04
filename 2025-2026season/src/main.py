@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------- #
 #                                                                              #
 # 	Module:       main.py                                                      #
-# 	Author:       WestonLohrum                                                 #
+# 	Author:       Vex 78721B                                                 #
 # 	Created:      1/4/2026, 2:19:54 PM                                         #
 # 	Description:  IQ2 project                                                  #
 #                                                                              #
