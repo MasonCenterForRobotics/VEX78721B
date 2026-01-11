@@ -19,19 +19,19 @@ brain_inertial = Inertial()
 controller = Controller()
 
 # Drive motors
-left_drive_1 = Motor(Ports.PORT1, False)
-left_drive_2 = Motor(Ports.PORT7, False)
-right_drive_1 = Motor(Ports.PORT6, True)
-right_drive_2 = Motor(Ports.PORT12, True)
+left_drive_1 = Motor(Ports.PORT7, True)
+#left_drive_2 = Motor(Ports.PORT7, False)
+right_drive_1 = Motor(Ports.PORT12, False)
+#right_drive_2 = Motor(Ports.PORT12, True)
 
 # Arm and claw motors will have brake mode set to hold
 # Claw motor will have max torque limited
 claw_motor = Motor(Ports.PORT4, True)
-arm_motor = Motor(Ports.PORT10, True)
+arm_motor = Motor(Ports.PORT11, True)
 
 # Auxilary motors
-motor_aux_1 = Motor(Ports.PORT11, False)
-motor_aux_2 = Motor(Ports.PORT5, False)
+#motor_aux_1 = Motor(Ports.PORT11, False)
+#motor_aux_2 = Motor(Ports.PORT5, False)
 
 # Max motor speed (percent) for motors controlled by buttons
 MAX_SPEED = 50
@@ -76,17 +76,17 @@ def drive_task():
 
         # The drivetrain
         left_drive_1.spin(FORWARD, drive_left, PERCENT)
-        left_drive_2.spin(FORWARD, drive_left, PERCENT)
+        #left_drive_2.spin(FORWARD, drive_left, PERCENT)
         right_drive_1.spin(FORWARD, drive_right, PERCENT)
-        right_drive_2.spin(FORWARD, drive_right, PERCENT)
+        #right_drive_2.spin(FORWARD, drive_right, PERCENT)
 
         # Claw and Arm motors
         arm_motor.spin(FORWARD, control_l1, PERCENT)
         claw_motor.spin(FORWARD, control_r1, PERCENT)
  
         # and the auxilary motors
-        motor_aux_1.spin(FORWARD, control_l2, PERCENT)
-        motor_aux_2.spin(FORWARD, control_r2, PERCENT)
+        #motor_aux_1.spin(FORWARD, control_l2, PERCENT)
+        #motor_aux_2.spin(FORWARD, control_r2, PERCENT)
 
         # No need to run too fast
         sleep(10)
