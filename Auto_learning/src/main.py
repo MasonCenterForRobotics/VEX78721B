@@ -12,7 +12,12 @@ from vex import *
 def main():
     # Brain should be defined by default
     brain=Brain()
-    drivetrain=DriveTrain()
+    lm=Motor(Ports.PORT7, 1.0, True)
+    rm=Motor(Ports.PORT12, 1.0, False)
+    drivetrain=DriveTrain(lm,rm)
+
+    claw_motor = Motor(Ports.PORT4)
+    lift_motor = Motor(Ports.PORT11)    
 
     brain.screen.print("Hello IQ2")
     drivetrain.drive_for(FORWARD, 350, MM)
